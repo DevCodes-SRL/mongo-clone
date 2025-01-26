@@ -4,7 +4,7 @@
   "description": "@devcodes-sdk/mongo-clone is a powerful CLI tool that simplifies cloning MongoDB databases. With a single command, you can easily replicate collections and documents across databases using npx.",
   "main": "./src/index.ts",
   "bin": {
-    "@devcodes-sdk/mongo-clone": "./dist/index.js"
+    "mongo-clone": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",

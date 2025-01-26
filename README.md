@@ -13,7 +13,7 @@
 You can run the tool directly using `npx` (no installation required):
 
 ```bash
-npx @devcodes-sdk/mongo-clone
+npx mongo-clone
 
 npm install -g @devcodes-sdk/mongo-clone
 ```
@@ -23,7 +23,7 @@ npm install -g @devcodes-sdk/mongo-clone
 The tool requires the source and destination MongoDB URIs. Here's the command structure:
 
 ```bash
-npx @devcodes-sdk/mongo-clone -s <SOURCE_MONGO_DB_URL> -d <DEST_MONGO_DB_URL>
+npx mongo-clone -s <SOURCE_MONGO_DB_URL> -d <DEST_MONGO_DB_URL>
 ```
 
 ## MongoDB URI Format 🍃
