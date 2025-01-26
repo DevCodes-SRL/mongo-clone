@@ -6,6 +6,8 @@ import cliProgress from "cli-progress";
 import { logger } from "./utils/logger";
 
 const program = new Command();
+const mongoRegex =
+  /^mongodb:\/\/([a-zA-Z0-9-_]+):([a-zA-Z0-9-_]+)@([a-zA-Z0-9.-]+):(\d+)\/([a-zA-Z0-9-_]+)$/;
 
 program
   .usage("-s <SOURCE_MONGO_DB_URL> -d <DEST_MONGO_DB_URL>")
@@ -17,6 +19,16 @@ program
       logger.info(
         "USAGE: mongo-clone -s <SOURCE_MONGO_DB_URL> -d <DEST_MONGO_DB_URL>"
       );
+      logger.info("MongoURL: mongodb://USER:PASS@HOST:PORT/DBNAME");
+
+      process.exit(1);
+    }
+
+    if (
+      !mongoRegex.test(options.source) ||
+      !mongoRegex.test(options.destination)
+    ) {
+      logger.error("Invalid MongoDB URI");
       logger.info("MongoURL: mongodb://USER:PASS@HOST:PORT/DBNAME");
 
       process.exit(1);
